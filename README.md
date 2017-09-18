@@ -1,5 +1,5 @@
 # uglymirror
-A security CRUD web application with an ugly frontend
+A security CRUD web application with an ugly frontend.
 
 # General
 
@@ -52,10 +52,10 @@ Step 4
 
 Run the app with the following sequence:
 
- 1 - python manage.py createsuperuser --> Create a default superuser to test 
- 2- python manage.py makemigrations --> To create the migrations in uglymirror model
- 3- python manage.py migrate --> To create tables with entries defined in models
- 4- python manage.py runserver --> To run the app on localhost, port 8000
+  - 1 - python manage.py createsuperuser --> Create a default superuser to test 
+  - 2- python manage.py makemigrations --> To create the migrations in uglymirror model
+  - 3- python manage.py migrate --> To create tables with entries defined in models
+  -4- python manage.py runserver --> To run the app on localhost, port 8000
 
 Good luck and be safe! :)
 
