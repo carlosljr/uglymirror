@@ -23,15 +23,10 @@ def update_user_profile(sender, instance, created, **kwargs):
 
 class UglyMirror(models.Model):
   user = models.ForeignKey(User)
-  # age = models.IntegerField(help_text='Age of my ugliness')
   age = EncryptedIntegerField(help_text='Age of my ugliness')
-  # ugly_rate = models.IntegerField(help_text='How ugly am I? (1 - Not so ugly / 99999999 - Monster level)')
   ugly_rate = EncryptedIntegerField(help_text='How ugly am I? (1 - Not so ugly / 99999999 - Monster level)')
-  # feeling = models.TextField(help_text='How am I feeling today?')
   feeling = EncryptedTextField(help_text='How am I feeling today?')
-  # interface_compare = models.CharField(max_length=200, help_text='Am I more ugly than this interface?')
   interface_compare = EncryptedCharField(max_length=200, help_text='Am I uglier than this interface? (Yes/No/A little/A lot)')
-  # date = models.DateTimeField(auto_now_add=True)
   date = EncryptedDateTimeField(auto_now_add=True)
 
   def __unicode__(self):

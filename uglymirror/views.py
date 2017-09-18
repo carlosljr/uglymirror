@@ -18,25 +18,11 @@ from uglymirror.tokens import account_activation_token
 
 # Create your views here.
 
-# class home(LoginRequiredMixin, generic.ListView):
-
-#   login_url = '/login/'
-#   redirect_field_name = 'redirect_to'
-#   template_name = 'home.html'
-#   context_object_name = 'all_jobs'
-
-#   def get_queryset(self):
-#     return True
-
 class UglyForm(ModelForm):
   class Meta:
     model = UglyMirror
     fields = ['age', 'ugly_rate', 'feeling', 'interface_compare']
 
-
-# def home(request, template_name='home.html'):
-#   if request.method == 'GET':
-#     return render(request, 'home.html')
 
 @login_required()
 def ugly_list(request, template_name='ugly_mirror/ugly_list.html'):
@@ -130,17 +116,3 @@ def activate(request, uidb64, token):
 
 def user_ready_to_login(request):
   return render(request, 'user_ready_to_login.html')
-
-# def signup(request):
-#   if request.method == 'POST':
-#     form = SignUpForm(request.POST)
-#     if form.is_valid():
-#       form.save()
-#       username = form.cleaned_data.get('username')
-#       raw_password = form.cleaned_data.get('password1')
-#       user = authenticate(username=username, password=raw_password)
-#       login(request, user)
-#       return redirect('ugly_list')
-#   else:
-#     form = SignUpForm()
-#   return render(request, 'signup.html', {'form': form})
