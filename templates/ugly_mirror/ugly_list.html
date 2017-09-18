@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Records Of Ugliness</h2>
+<ul>
+    {% for uglymirror in object_list %}
+    <li>{{ uglymirror.date }}  :  
+    <a href="{% url "ugly_edit" uglymirror.id %}">{{ uglymirror.feeling }}</a>
+    <a href="{% url "ugly_delete" uglymirror.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url "ugly_new" %}">New</a>
+{% endblock %}

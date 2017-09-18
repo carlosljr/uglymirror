@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Ugly Mirror Login{% endblock %}
+
+{% block content %}
+    {% if not user.is_authenticated %}
+      <h2>Where your ugliness is safe.</h2>
+      <h3>Login</h3>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+        <p><a href="{% url 'password_reset' %}">Forgot your password?</p>
+        <p><a href="{% url 'signup' %}">Sign up your here!</p>
+      </form>
+    {% endif %}
+{% endblock %}

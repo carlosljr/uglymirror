@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}UM Frontend{% endblock %}</title>
+</head>
+<body>
+  <header>
+    <h1>The Ugly Mirror Frontend</h1>
+    {% if user.is_authenticated %}
+      Hi {{ user.username }}!
+      <a href="{% url 'logout' %}">logout</a>
+    {% endif %}
+  </header>
+  <hr>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <hr>
+</body>
+</html>
